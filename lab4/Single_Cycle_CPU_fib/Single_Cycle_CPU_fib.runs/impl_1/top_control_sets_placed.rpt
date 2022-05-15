@@ -1,0 +1,119 @@
+Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date         : Fri Apr  8 17:47:49 2022
+| Host         : Bill-Matebook running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file top_control_sets_placed.rpt
+| Design       : top
+| Device       : xc7a100t
+------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    41 |
+|    Minimum number of control sets                        |    41 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    11 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    41 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     1 |
+| >= 6 to < 8        |     0 |
+| >= 8 to < 10       |     0 |
+| >= 10 to < 12      |     1 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     1 |
+| >= 16              |    38 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |              56 |           23 |
+| No           | No                    | Yes                    |              56 |           30 |
+| No           | Yes                   | No                     |               0 |            0 |
+| Yes          | No                    | No                     |             992 |          530 |
+| Yes          | No                    | Yes                    |              37 |           19 |
+| Yes          | Yes                   | No                     |               0 |            0 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------------------+----------------------------------------------------------------------------------------------------+------------------+------------------+----------------+--------------+
+|         Clock Signal         |                                            Enable Signal                                           | Set/Reset Signal | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------------------+----------------------------------------------------------------------------------------------------+------------------+------------------+----------------+--------------+
+|  clk_IBUF_BUFG               | cpu/calc/E[0]                                                                                      | sw_IBUF[7]       |                1 |              5 |         5.00 |
+|  cpu/text/bbstub_spo[6]_0[0] |                                                                                                    |                  |                3 |             10 |         3.33 |
+|  clk_IBUF_BUFG               |                                                                                                    |                  |                5 |             14 |         2.80 |
+|  clk_IBUF_BUFG               |                                                                                                    | sw_IBUF[7]       |                7 |             24 |         3.43 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[10]_2[0]                                                                       |                  |               12 |             32 |         2.67 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[10]_5[0]                                                                       |                  |               18 |             32 |         1.78 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[11]_1[0]                                                                       |                  |               16 |             32 |         2.00 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[10][0]                                                                         |                  |               20 |             32 |         1.60 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[11][0]                                                                         |                  |               18 |             32 |         1.78 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[11]_0[0]                                                                       |                  |               16 |             32 |         2.00 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[10]_4[0]                                                                       |                  |               16 |             32 |         2.00 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[10]_0[0]                                                                       |                  |               27 |             32 |         1.19 |
+|  cpu_clk_BUFG                | cpu/text/E[0]                                                                                      |                  |               16 |             32 |         2.00 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[10]_1[0]                                                                       |                  |               16 |             32 |         2.00 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[10]_3[0]                                                                       |                  |               16 |             32 |         2.00 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[8]_1[0]                                                                        |                  |               17 |             32 |         1.88 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[7]_0[0]                                                                        |                  |               16 |             32 |         2.00 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[8]_0[0]                                                                        |                  |               25 |             32 |         1.28 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[8]_3[0]                                                                        |                  |               13 |             32 |         2.46 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[8]_2[0]                                                                        |                  |               13 |             32 |         2.46 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[7]_1[0]                                                                        |                  |               19 |             32 |         1.68 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[8]_4[0]                                                                        |                  |               18 |             32 |         1.78 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[8]_5[0]                                                                        |                  |               19 |             32 |         1.68 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[9]_1[0]                                                                        |                  |               12 |             32 |         2.67 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[7]_2[0]                                                                        |                  |               18 |             32 |         1.78 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[8][0]                                                                          |                  |               18 |             32 |         1.78 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[9]_5[0]                                                                        |                  |               19 |             32 |         1.68 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[9]_3[0]                                                                        |                  |               17 |             32 |         1.88 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[9]_0[0]                                                                        |                  |               14 |             32 |         2.29 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[7][0]                                                                          |                  |               17 |             32 |         1.88 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[7]_4[0]                                                                        |                  |               20 |             32 |         1.60 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[9]_4[0]                                                                        |                  |               18 |             32 |         1.78 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[9]_2[0]                                                                        |                  |               16 |             32 |         2.00 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[7]_3[0]                                                                        |                  |               11 |             32 |         2.91 |
+|  cpu_clk_BUFG                | cpu/text/bbstub_spo[9][0]                                                                          |                  |               19 |             32 |         1.68 |
+|  cpu_clk_BUFG                |                                                                                                    | sw_IBUF[7]       |               23 |             32 |         1.39 |
+|  clk_IBUF_BUFG               | cpu/calc/_inferred__0/i__carry_0[0]                                                                | sw_IBUF[7]       |               18 |             32 |         1.78 |
+|  n_0_37_BUFG                 |                                                                                                    |                  |               15 |             32 |         2.13 |
+|  cpu_clk_BUFG                | cpu/data/mem_text/U0/synth_options.dist_mem_inst/gen_dp_ram.dpram_inst/ram_reg_0_127_0_0_i_1_n_0   |                  |               32 |            128 |         4.00 |
+|  cpu_clk_BUFG                | cpu/data/mem_text/U0/synth_options.dist_mem_inst/gen_dp_ram.dpram_inst/ram_reg_128_255_0_0_i_1_n_0 |                  |               32 |            128 |         4.00 |
+|  cpu_clk_BUFG                |                                                                                                    |                  |               64 |            256 |         4.00 |
++------------------------------+----------------------------------------------------------------------------------------------------+------------------+------------------+----------------+--------------+
+
+

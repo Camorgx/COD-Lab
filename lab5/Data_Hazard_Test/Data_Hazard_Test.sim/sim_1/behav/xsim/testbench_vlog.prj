@@ -1,0 +1,30 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Data_Hazard_Test.gen/sources_1/ip/dist_mem_data/sim/dist_mem_data.v" \
+"../../../../Data_Hazard_Test.gen/sources_1/ip/dist_mem_inst/sim/dist_mem_inst.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/ALU.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/ALU_Control.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Adder.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/CPU.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Control.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Data_Memeory.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/EX_MEM.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Forwarding.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Hazard_Detect.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/ID_EX.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/IF_ID.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Imm_Gen.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Inst_Memory.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/MEM_WB.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/PDU.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Predict.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Registers.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Shift_Left.v" \
+"../../../../../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Top.v" \
+"../../../../Data_Hazard_Test.srcs/sim_1/new/testbench.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

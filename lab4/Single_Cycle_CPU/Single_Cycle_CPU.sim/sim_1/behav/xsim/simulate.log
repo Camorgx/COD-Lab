@@ -1,0 +1,9 @@
+Time resolution is 1 ps
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+WARNING: Too many words specified in data file dist_mem_data.mif
+WARNING in tb.tp.cpu.data.mem_text.inst at time                17000 ns: 
+Reading from out-of-range address. Max address in tb.tp.cpu.data.mem_text.inst is         255
+WARNING in tb.tp.cpu.data.mem_text.inst at time                41000 ns: 
+Reading from out-of-range address. Max address in tb.tp.cpu.data.mem_text.inst is         255
+$finish called at time : 100 ns : File "C:/Users/18213/Sources/Vivado_Projects/Principle_Of_Computer_Composition/lab4/Single_Cycle_CPU/Single_Cycle_CPU.srcs/sim_1/new/tb.v" Line 11

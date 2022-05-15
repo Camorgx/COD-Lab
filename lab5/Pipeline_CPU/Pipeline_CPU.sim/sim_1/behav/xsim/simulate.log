@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+WARNING: Too many words specified in data file dist_mem_data.mif
+$finish called at time : 100 ns : File "/home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sim_1/new/testbench.v" Line 11
