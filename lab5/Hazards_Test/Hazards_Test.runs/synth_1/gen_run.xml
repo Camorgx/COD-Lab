@@ -1,30 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1652104906" LaunchIncrCheckpoint="$PPRDIR/../../../../../C:/Users/18213/Sources/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Hazards_Test/Hazards_Test.srcs/utils_1/imports/synth_1/Top.dcp">
-  <File Type="VDS-TIMING-PB" Name="Top_timing_summary_synth.pb"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="Top_timing_summary_synth.rpt"/>
-  <File Type="RDS-DCP" Name="Top.dcp"/>
-  <File Type="RDS-UTIL-PB" Name="Top_utilization_synth.pb"/>
-  <File Type="RDS-UTIL" Name="Top_utilization_synth.rpt"/>
-  <File Type="RDS-PROPCONSTRS" Name="Top_drc_synth.rpt"/>
-  <File Type="RDS-RDS" Name="Top.vds"/>
-  <File Type="REPORTS-TCL" Name="Top_reports.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7a100tcsg324-1" LaunchTime="1652617337">
   <File Type="PA-TCL" Name="Top.tcl"/>
+  <File Type="REPORTS-TCL" Name="Top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="Top.vds"/>
+  <File Type="RDS-UTIL" Name="Top_utilization_synth.rpt"/>
+  <File Type="RDS-UTIL-PB" Name="Top_utilization_synth.pb"/>
+  <File Type="RDS-DCP" Name="Top.dcp"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/ip/dist_mem_data/dist_mem_data.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/ip/dist_mem_inst/dist_mem_inst.xci">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PPRDIR/../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/ALU.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -123,6 +106,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PPRDIR/../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/PC_Generator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PPRDIR/../Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/PDU.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -158,13 +148,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/data.coe">
+    <File Path="$PPRDIR/inst.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/inst.coe">
+    <File Path="$PPRDIR/data.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -190,14 +180,6 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1">
     <Filter Type="Utils"/>
-    <File Path="$PPRDIR/../../../../../C:/Users/18213/Sources/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Hazards_Test/Hazards_Test.srcs/utils_1/imports/synth_1/Top.dcp">
-      <FileInfo>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedInSteps" Val="synth_1"/>
-        <Attr Name="AutoDcp" Val="1"/>
-      </FileInfo>
-    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>
@@ -206,4 +188,6 @@
     <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2021"/>
     <Step Id="synth_design"/>
   </Strategy>
+  <BlockFileSet Type="BlockSrcs" Name="dist_mem_inst"/>
+  <BlockFileSet Type="BlockSrcs" Name="dist_mem_data"/>
 </GenRun>

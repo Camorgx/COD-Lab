@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/18213/Sources/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Hazards_Test/Hazards_Test.runs/dist_mem_data_synth_1'
+HD_PWD='C:/Users/18213/Sources/COD_Lab/lab5/Hazards_Test/Hazards_Test.runs/dist_mem_data_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

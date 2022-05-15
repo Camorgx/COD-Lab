@@ -3,8 +3,8 @@
 // Tool Version: Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
 // Date        : Tue Apr 26 13:55:21 2022
 // Host        : fedora running 64-bit unknown
-// Command     : write_verilog -force -mode synth_stub
-//               /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Data_Hazard_Test/Data_Hazard_Test.gen/sources_1/ip/dist_mem_inst/dist_mem_inst_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top dist_mem_inst -prefix
+//               dist_mem_inst_ dist_mem_inst_stub.v
 // Design      : dist_mem_inst
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1

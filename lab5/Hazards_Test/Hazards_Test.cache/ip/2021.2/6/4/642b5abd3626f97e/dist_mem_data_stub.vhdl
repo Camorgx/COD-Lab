@@ -1,8 +1,8 @@
 -- Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
--- Date        : Tue Apr 26 11:03:23 2022
--- Host        : Bill-Matebook running 64-bit major release  (build 9200)
+-- Date        : Sun May 15 20:20:39 2022
+-- Host        : MECHREVO-BILL running 64-bit major release  (build 9200)
 -- Command     : write_vhdl -force -mode synth_stub -rename_top decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix -prefix
 --               decalper_eb_ot_sdeen_pot_pi_dehcac_xnilix_ dist_mem_data_stub.vhdl
 -- Design      : dist_mem_data

@@ -1,13 +1,13 @@
 #-----------------------------------------------------------
 # Vivado v2021.2 (64-bit)
-# SW Build 3367213 on Tue Oct 19 02:47:39 MDT 2021
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Mon May  9 22:01:55 2022
-# Process ID: 6094
-# Current directory: /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.runs/dist_mem_inst_synth_1
-# Command line: vivado -log dist_mem_inst.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dist_mem_inst.tcl
-# Log file: /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.runs/dist_mem_inst_synth_1/dist_mem_inst.vds
-# Journal file: /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.runs/dist_mem_inst_synth_1/vivado.jou
-# Running On: fedora, OS: Linux, CPU Frequency: 2300.000 MHz, CPU Physical cores: 8, Host memory: 67330 MB
+# Start of session at: Sun May 15 20:01:38 2022
+# Process ID: 12032
+# Current directory: C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/Fib_Test.runs/dist_mem_inst_synth_1
+# Command line: vivado.exe -log dist_mem_inst.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dist_mem_inst.tcl
+# Log file: C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/Fib_Test.runs/dist_mem_inst_synth_1/dist_mem_inst.vds
+# Journal file: C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/Fib_Test.runs/dist_mem_inst_synth_1\vivado.jou
+# Running On: MECHREVO-BILL, OS: Windows, CPU Frequency: 2304 MHz, CPU Physical cores: 8, Host memory: 68621 MB
 #-----------------------------------------------------------
 source dist_mem_inst.tcl -notrace

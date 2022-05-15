@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "/home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.runs/synth_1/Top.tcl"
+  variable script "C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/Fib_Test.runs/synth_1/Top.tcl"
   variable category "vivado_synth"
 }
 
@@ -77,45 +77,46 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.cache/wt [current_project]
-set_property parent.project_path /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/Fib_Test.cache/wt [current_project]
+set_property parent.project_path C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/Fib_Test.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property ip_output_repo /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.cache/ip [current_project]
+set_property ip_output_repo c:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/Fib_Test.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/data.coe
-add_files /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/inst.coe
-add_files /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/const_fib.coe
-add_files /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/tea_inst.coe
-add_files {{/home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/addi test.coe}}
+add_files C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/data.coe
+add_files C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/inst.coe
+add_files C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/const_fib.coe
+add_files C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/tea_inst.coe
+add_files {{C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/addi test.coe}}
 read_verilog -library xil_defaultlib {
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/ALU.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/ALU_Control.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Adder.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/CPU.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Control.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Data_Memeory.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/EX_MEM.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Forwarding.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Hazard_Detect.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/ID_EX.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/IF_ID.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Imm_Gen.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Inst_Memory.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/MEM_WB.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/PDU.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Predict.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Registers.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Shift_Left.v
-  /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Top.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/ALU.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/ALU_Control.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Adder.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/CPU.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Control.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Data_Memeory.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/EX_MEM.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Forwarding.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Hazard_Detect.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/ID_EX.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/IF_ID.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Imm_Gen.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Inst_Memory.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/MEM_WB.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/PC_Generator.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/PDU.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Predict.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Registers.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Shift_Left.v
+  C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/sources_1/new/Top.v
 }
-read_ip -quiet /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.srcs/sources_1/ip/dist_mem_data/dist_mem_data.xci
-set_property used_in_implementation false [get_files -all /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.gen/sources_1/ip/dist_mem_data/dist_mem_data_ooc.xdc]
+read_ip -quiet C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/Fib_Test.srcs/sources_1/ip/dist_mem_data/dist_mem_data.xci
+set_property used_in_implementation false [get_files -all c:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/Fib_Test.gen/sources_1/ip/dist_mem_data/dist_mem_data_ooc.xdc]
 
-read_ip -quiet /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.srcs/sources_1/ip/dist_mem_inst/dist_mem_inst.xci
-set_property used_in_implementation false [get_files -all /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.gen/sources_1/ip/dist_mem_inst/dist_mem_inst_ooc.xdc]
+read_ip -quiet C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/Fib_Test.srcs/sources_1/ip/dist_mem_inst/dist_mem_inst.xci
+set_property used_in_implementation false [get_files -all c:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/Fib_Test.gen/sources_1/ip/dist_mem_inst/dist_mem_inst_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -126,12 +127,12 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/constrs_1/new/fpgaol2.xdc
-set_property used_in_implementation false [get_files /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Pipeline_CPU/Pipeline_CPU.srcs/constrs_1/new/fpgaol2.xdc]
+read_xdc C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/constrs_1/new/fpgaol2.xdc
+set_property used_in_implementation false [get_files C:/Users/18213/Sources/COD_Lab/lab5/Pipeline_CPU/Pipeline_CPU.srcs/constrs_1/new/fpgaol2.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental /home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.srcs/utils_1/imports/synth_1/Top.dcp
+read_checkpoint -auto_incremental -incremental C:/Users/18213/Sources/COD_Lab/lab5/Fib_Test/Fib_Test.srcs/utils_1/imports/synth_1/Top.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

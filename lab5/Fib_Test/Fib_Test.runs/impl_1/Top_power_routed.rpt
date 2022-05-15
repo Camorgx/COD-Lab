@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------
-| Tool Version     : Vivado v.2021.2 (lin64) Build 3367213 Tue Oct 19 02:47:39 MDT 2021
-| Date             : Mon May  9 22:04:03 2022
-| Host             : fedora running 64-bit Fedora release 35 (Thirty Five)
+| Tool Version     : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
+| Date             : Sun May 15 20:03:48 2022
+| Host             : MECHREVO-BILL running 64-bit major release  (build 9200)
 | Command          : report_power -file Top_power_routed.rpt -pb Top_power_summary_routed.pb -rpx Top_power_routed.rpx
 | Design           : Top
 | Device           : xc7a100tcsg324-1
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.126        |
+| Total On-Chip Power (W)  | 0.128        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.028        |
+| Dynamic (W)              | 0.030        |
 | Device Static (W)        | 0.097        |
 | Effective TJA (C/W)      | 4.6          |
 | Max Ambient (C)          | 84.4         |
@@ -53,18 +53,18 @@ Table of Contents
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
 | Clocks                   |     0.002 |        3 |       --- |             --- |
-| Slice Logic              |     0.003 |     4695 |       --- |             --- |
-|   LUT as Logic           |     0.003 |     1641 |     63400 |            2.59 |
-|   Register               |    <0.001 |     1628 |    126800 |            1.28 |
+| Slice Logic              |     0.004 |     4701 |       --- |             --- |
+|   LUT as Logic           |     0.004 |     1644 |     63400 |            2.59 |
+|   Register               |    <0.001 |     1630 |    126800 |            1.29 |
 |   CARRY4                 |    <0.001 |       29 |     15850 |            0.18 |
 |   BUFG                   |    <0.001 |        1 |        32 |            3.13 |
 |   F7/F8 Muxes            |    <0.001 |      835 |     63400 |            1.32 |
 |   Others                 |     0.000 |       10 |       --- |             --- |
 |   LUT as Distributed RAM |     0.000 |      384 |     19000 |            2.02 |
-| Signals                  |     0.007 |     2826 |       --- |             --- |
+| Signals                  |     0.008 |     2831 |       --- |             --- |
 | I/O                      |     0.017 |       25 |       210 |           11.90 |
 | Static Power             |     0.097 |          |           |                 |
-| Total                    |     0.126 |          |           |                 |
+| Total                    |     0.128 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.027 |       0.012 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.029 |       0.014 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.019 |       0.001 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.009 |       0.005 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -143,9 +143,9 @@ Table of Contents
 +-----------+-----------+
 | Name      | Power (W) |
 +-----------+-----------+
-| Top       |     0.028 |
-|   cpu     |     0.006 |
-|     id_ex |     0.003 |
+| Top       |     0.030 |
+|   cpu     |     0.007 |
+|     id_ex |     0.004 |
 |     regs  |     0.001 |
 |   pdu     |     0.005 |
 +-----------+-----------+
