@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon May 16 10:39:27 2022
+# Process ID: 3660
+# Current directory: C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.runs/dist_mem_inst_synth_1
+# Command line: vivado.exe -log dist_mem_inst.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dist_mem_inst.tcl
+# Log file: C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.runs/dist_mem_inst_synth_1/dist_mem_inst.vds
+# Journal file: C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.runs/dist_mem_inst_synth_1\vivado.jou
+# Running On: Bill-Matebook, OS: Windows, CPU Frequency: 2419 MHz, CPU Physical cores: 4, Host memory: 16967 MB
+#-----------------------------------------------------------
+source dist_mem_inst.tcl -notrace
