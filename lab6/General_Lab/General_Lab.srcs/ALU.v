@@ -3,10 +3,14 @@
 module ALU #(parameter width = 32) (
     input[width - 1 : 0] a, b,
     input[3 : 0] op,
+    input branch_sel,
     output reg[width - 1: 0] ans,
-    output z
+    output bran
 );
+    wire n, z;
+    assign n = (ans < 0);
     assign z = (ans == 0);
+    assign bran = branch_sel ? z : n;
 
     always @(*) begin
         case (op)

@@ -3,10 +3,13 @@
 module Top(
     input clk, btn,
     input[7 : 0] sw,
-    output[2 : 0] an,
-    output[3 : 0] d,
-    output[7 : 0] led
+    output[7 : 0] led, hexplay_se, hexplay_en
 );
+    wire[2 : 0] an;
+    wire[3 : 0] d;
+    Hexplay_Converter converter(.hexplay_en(hexplay_en), .hexplay_se(hexplay_se),
+        .hexplay_an(an), .hexplay_data(d));
+    
     wire io_we, clk_cpu;
     wire[4:0] rd, rdm, rdw;
     wire[7 : 0] io_addr, m_rf_addr;

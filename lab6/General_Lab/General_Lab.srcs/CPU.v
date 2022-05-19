@@ -31,8 +31,8 @@ module CPU(
     output [4:0] rdw
 );
     wire predict, jal, Branch, ALUScr, MemWrite, RegWrite, MemRead;
-    wire Branch_reg, IF_ID_en, PC_en, turn_nop;
-    wire alu_z, jal_reg, ALUScr_reg;
+    wire Branch_reg, IF_ID_en, PC_en, turn_nop, jalr, jalr_ex;
+    wire alu_z, jal_reg, ALUScr_reg, BranchSel, BranchSel_ex;
     wire MemWrite_ex, RegWrite_ex, MemRead_ex, predict_failed;
     wire MemWrite_mem, RegWrite_mem, Regwrite_wb, data_we;
     wire[1 : 0] ALUOp, RegScr, RegScr_ex, ForwardA, ForwardB, RegScr_mem, RegScr_wb;
@@ -40,16 +40,17 @@ module CPU(
     wire[4 : 0] a_src_reg, b_src_reg;
     wire[31 : 0] inst, pc_add_imm, pc_add_4, alu_result_mem;
     wire[31 : 0] inst_id, rd0, rd1, rd2, b_mem, data_rd, imm;
-    wire[31 : 0] alu_result, shift_out, a_reg, b_reg, imm_reg, alu_op2;
+    wire[31 : 0] alu_result, shift_out, a_reg, b_reg, imm_reg, alu_op1, alu_op2;
     wire[31 : 0] alu_result_wb, mem_rd_reg, mem_rd, pc_add_imm_reg;
     wire[31 : 0] pc_add_4_d, pc_add_4_ex, pc_add_4_mem, pc_add_4_wb;
+    wire[31 : 0] pc_add_imm_mem, pc_add_imm_wb;
     
-    reg[31 : 0] wd, alu_op1, new_b;
-    assign predict_failed = Branch_reg & (predict ^ alu_z);
-    PC_Generator pc_gen(.jal(jal), .predict_failed(predict_failed), 
+    reg[31 : 0] wd, new_a, new_b;
+    assign predict_failed = (jalr_ex | (Branch_reg & (predict ^ alu_z)));
+    PC_Generator pc_gen(.jal(jal), .predict_failed(predict_failed), .jalr_ex(jalr_ex),
         .predict(predict), .alu_z(alu_z), .Branch(Branch), .pc_add_imm(pc_add_imm), 
         .pc_add_imm_reg(pc_add_imm_reg), .pc_add_4_ex(pc_add_4_ex), 
-        .pc_add_4(pc_add_4), .pcin(pcin));
+        .pc_add_4(pc_add_4), .pcin(pcin), .alu_result(alu_result));
     always @(posedge clk or posedge rst) begin
         if (rst) pc <= 32'h3000;
         else if (PC_en) pc <= pcin;
@@ -67,7 +68,7 @@ module CPU(
     
     Predict pre(.clk(clk), .rst(rst), .Branch_reg(Branch_reg), 
         .taken(alu_z), .predict(predict));
-    Control control(.inst(inst_id[6 : 0]), .jal(jal), .Branch(Branch), 
+    Control control(.inst(inst_id[6 : 0]), .jal(jal), .Branch(Branch), .jalr(jalr), 
         .ALUScr(ALUScr), .MemWrite(MemWrite), .MemRead(MemRead),
         .RegWrite(RegWrite), .ALUOp(ALUOp), .RegScr(RegScr));
     Imm_Gen imm_gen(.inst(inst_id), .imm(imm));
@@ -79,9 +80,10 @@ module CPU(
     Registers regs(.clk(clk), .rst(rst), .ra0(inst_id[19 : 15]), 
         .ra1(inst_id[24 : 20]), .ra2(m_rf_addr[4 : 0]), .wa(rdw), 
         .we(Regwrite_wb), .wd(wd), .rd0(rd0), .rd1(rd1), .rd2(rf_data));
-    ALU_Control alu_ctl(.ALUOp(ALUOp), .inst30(inst_id[30]), .ALUfunc(ALUfunc));
+    ALU_Control alu_ctl(.ALUOp(ALUOp), .inst30(inst_id[30]), .ALUfunc(ALUfunc),
+        .BranchSel(BranchSel), .funct3(inst_id[14 : 12]));
     
-    ID_EX id_ex(.clk(clk), .rst(rst), .jal(jal), .Branch(Branch), 
+    ID_EX id_ex(.clk(clk), .rst(rst), .jal(jal), .Branch(Branch), .jalr(jalr), .jalr_ex(jalr_ex),
         .ALUScr(ALUScr), .MemWrite((turn_nop | predict_failed) ? 1'b0 : MemWrite), 
         .MemRead(MemRead), .RegWrite((turn_nop | predict_failed) ? 1'b0 : RegWrite),
         .RegScr(RegScr), .a_src(inst_id[19 : 15]), .b_src(inst_id[24 : 20]), 
@@ -91,17 +93,18 @@ module CPU(
         .MemRead_ex(MemRead_ex), .RegScr_ex(RegScr_ex), .a_src_reg(a_src_reg), 
         .b_src_reg(b_src_reg), .wb_src_ex(rd), .ALUfunc_reg(ALUfunc_reg), 
         .a_reg(a_reg), .b_reg(b_reg), .imm_reg(imm_reg), .pc_add_4_d(pc_add_4_d), 
-        .pc_add_4_ex(pc_add_4_ex), .pc_add_imm_reg(pc_add_imm_reg), .imm(imm));
+        .pc_add_4_ex(pc_add_4_ex), .pc_add_imm_reg(pc_add_imm_reg), .imm(imm),
+        .BranchSel(BranchSel), .BranchSel_ex(BranchSel_ex));
     
     Forwarding forward(.RegWrite_mem(RegWrite_mem), .Regwrite_wb(Regwrite_wb),
         .a_src_reg(a_src_reg), .b_src_reg(b_src_reg), .wb_src_mem(rdm), 
         .wb_src_wb(rdw), .ForwardA(ForwardA), .ForwardB(ForwardB));
     always @(*) begin
         case (ForwardA)
-            2'b00: alu_op1 = a_reg;
-            2'b01: alu_op1 = wd;
-            2'b10: alu_op1 = alu_result_mem;
-            default: alu_op1 = 0;
+            2'b00: new_a = a_reg;
+            2'b01: new_a = wd;
+            2'b10: new_a = alu_result_mem;
+            default: new_a = 0;
         endcase
     end
     always @(*) begin
@@ -112,15 +115,18 @@ module CPU(
             default: new_b = 0;
         endcase
     end
+    assign alu_op1 = (RegScr_ex == 2'b11) ? pce : new_a;
     assign alu_op2 = ALUScr_reg ? imm_reg : new_b;
-    ALU alu(.a(alu_op1), .b(alu_op2), .op(ALUfunc_reg), .ans(alu_result), .z(alu_z));
+    ALU alu(.a(alu_op1), .b(alu_op2), .op(ALUfunc_reg), 
+        .ans(alu_result), .bran(alu_z), .branch_sel(BranchSel_ex));
     
     EX_MEM ex_mem(.clk(clk), .rst(rst), .MemWrite_ex(MemWrite_ex),
         .RegScr_ex(RegScr_ex), .RegWrite_ex(RegWrite_ex),
         .wb_src_ex(rd), .alu_result(alu_result), .b_reg(new_b),
         .MemWrite_mem(MemWrite_mem), .RegWrite_mem(RegWrite_mem), .RegScr_mem(RegScr_mem), 
-        .wb_src_mem(rdm), .alu_result_mem(alu_result_mem), 
-        .b_mem(b_mem), .pc_add_4_ex(pc_add_4_ex), .pc_add_4_mem(pc_add_4_mem));
+        .wb_src_mem(rdm), .alu_result_mem(alu_result_mem),
+        .b_mem(b_mem), .pc_add_4_ex(pc_add_4_ex), .pc_add_4_mem(pc_add_4_mem),
+         .pc_add_imm_reg(pc_add_imm_reg), .pc_add_imm_mem(pc_add_imm_mem));
 
     assign data_we = (~alu_result_mem[10] & MemWrite_mem);
     Data_Memory data_mem(.clk(clk), .rwa(alu_result_mem[9 : 2]),
@@ -131,14 +137,15 @@ module CPU(
         .RegScr_wb(RegScr_wb), .wb_src_wb(rdw), .alu_result_wb(alu_result_wb),
         .RegScr_mem(RegScr_mem), .wb_src_mem(rdm), .mem_rd_reg(mem_rd_reg),
         .alu_result_mem(alu_result_mem), .Regwrite_wb(Regwrite_wb),
-        .mem_rd(mem_rd), .pc_add_4_mem(pc_add_4_mem), .pc_add_4_wb(pc_add_4_wb));
+        .mem_rd(mem_rd), .pc_add_4_mem(pc_add_4_mem), .pc_add_4_wb(pc_add_4_wb),
+        .pc_add_imm_wb(pc_add_imm_wb), .pc_add_imm_mem(pc_add_imm_mem));
     
     always @(*) begin
         case (RegScr_wb)
             2'b00: wd = alu_result_wb;
             2'b01: wd = mem_rd_reg;
             2'b10: wd = pc_add_4_wb;
-            default: wd = 0; 
+            default: wd = pc_add_imm_wb; 
         endcase
     end
     

@@ -1,8 +1,8 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-| Date         : Mon May 16 10:40:51 2022
-| Host         : Bill-Matebook running 64-bit major release  (build 9200)
+| Date         : Thu May 19 16:43:08 2022
+| Host         : MECHREVO-BILL running 64-bit major release  (build 9200)
 | Command      : report_utilization -file dist_mem_inst_utilization_synth.rpt -pb dist_mem_inst_utilization_synth.pb
 | Design       : dist_mem_inst
 | Device       : xc7a100tcsg324-1
