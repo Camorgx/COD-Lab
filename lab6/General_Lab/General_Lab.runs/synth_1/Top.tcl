@@ -85,8 +85,8 @@ set_property ip_output_repo c:/Users/18213/Sources/COD_Lab/lab6/General_Lab/Gene
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files c:/Users/18213/Sources/COD_Lab/lab6/General_Lab/inst_test_inst.coe
-add_files c:/Users/18213/Sources/COD_Lab/lab6/General_Lab/data_test_inst.coe
+add_files C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/inst_test_inst.coe
+add_files C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/data_test_inst.coe
 read_verilog -library xil_defaultlib {
   C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/ALU.v
   C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/ALU_Control.v

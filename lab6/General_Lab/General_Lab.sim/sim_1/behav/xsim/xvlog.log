@@ -12,7 +12,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/18213/Sources/COD_Lab/lab6
 INFO: [VRFC 10-311] analyzing module CPU
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/Control.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Control
-INFO: [VRFC 10-2458] undeclared symbol Imm_gen, assumed default net type wire [C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/Control.v:10]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/Data_Memeory.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Data_Memory
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/EX_MEM.v" into library xil_defaultlib

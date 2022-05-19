@@ -32,10 +32,11 @@ module CPU(
 );
     wire predict, jal, Branch, ALUScr, MemWrite, RegWrite, MemRead;
     wire Branch_reg, IF_ID_en, PC_en, turn_nop, jalr, jalr_ex;
-    wire alu_z, jal_reg, ALUScr_reg, BranchSel, BranchSel_ex;
+    wire alu_z, jal_reg, ALUScr_reg, SetBit, SetBit_ex;
     wire MemWrite_ex, RegWrite_ex, MemRead_ex, predict_failed;
     wire MemWrite_mem, RegWrite_mem, Regwrite_wb, data_we;
-    wire[1 : 0] ALUOp, RegScr, RegScr_ex, ForwardA, ForwardB, RegScr_mem, RegScr_wb;
+    wire[1 : 0] ALUOp, RegScr, RegScr_ex, ForwardA, ForwardB, RegScr_mem;
+    wire[1 : 0] RegScr_wb, BranchSel, BranchSel_ex;
     wire[3 : 0] ALUfunc, ALUfunc_reg;
     wire[4 : 0] a_src_reg, b_src_reg;
     wire[31 : 0] inst, pc_add_imm, pc_add_4, alu_result_mem;
@@ -81,7 +82,7 @@ module CPU(
         .ra1(inst_id[24 : 20]), .ra2(m_rf_addr[4 : 0]), .wa(rdw), 
         .we(Regwrite_wb), .wd(wd), .rd0(rd0), .rd1(rd1), .rd2(rf_data));
     ALU_Control alu_ctl(.ALUOp(ALUOp), .inst30(inst_id[30]), .ALUfunc(ALUfunc),
-        .BranchSel(BranchSel), .funct3(inst_id[14 : 12]));
+        .BranchSel(BranchSel), .funct3(inst_id[14 : 12]), .SetBit(SetBit));
     
     ID_EX id_ex(.clk(clk), .rst(rst), .jal(jal), .Branch(Branch), .jalr(jalr), .jalr_ex(jalr_ex),
         .ALUScr(ALUScr), .MemWrite((turn_nop | predict_failed) ? 1'b0 : MemWrite), 
@@ -94,7 +95,7 @@ module CPU(
         .b_src_reg(b_src_reg), .wb_src_ex(rd), .ALUfunc_reg(ALUfunc_reg), 
         .a_reg(a_reg), .b_reg(b_reg), .imm_reg(imm_reg), .pc_add_4_d(pc_add_4_d), 
         .pc_add_4_ex(pc_add_4_ex), .pc_add_imm_reg(pc_add_imm_reg), .imm(imm),
-        .BranchSel(BranchSel), .BranchSel_ex(BranchSel_ex));
+        .BranchSel(BranchSel), .BranchSel_ex(BranchSel_ex), .SetBit(SetBit), .SetBit_ex(SetBit_ex));
     
     Forwarding forward(.RegWrite_mem(RegWrite_mem), .Regwrite_wb(Regwrite_wb),
         .a_src_reg(a_src_reg), .b_src_reg(b_src_reg), .wb_src_mem(rdm), 
@@ -118,7 +119,7 @@ module CPU(
     assign alu_op1 = (RegScr_ex == 2'b11) ? pce : new_a;
     assign alu_op2 = ALUScr_reg ? imm_reg : new_b;
     ALU alu(.a(alu_op1), .b(alu_op2), .op(ALUfunc_reg), 
-        .ans(alu_result), .bran(alu_z), .branch_sel(BranchSel_ex));
+        .ans(alu_result), .bran(alu_z), .branch_sel(BranchSel_ex), .SetBit(SetBit_ex));
     
     EX_MEM ex_mem(.clk(clk), .rst(rst), .MemWrite_ex(MemWrite_ex),
         .RegScr_ex(RegScr_ex), .RegWrite_ex(RegWrite_ex),
