@@ -10,16 +10,16 @@ module ALU #(parameter width = 32) (
 );
     reg[width - 1: 0] result;
     wire n, z, p;
-    assign n = (result < 0);
+    assign n = result[31];
     assign z = (result == 0);
     assign p = (result > 0);
     
     always @(*) begin
         case (branch_sel)
-            2'b00: bran = n;
-            2'b01: bran = z;
-            2'b10: bran = p;
-            default: bran = ~z; 
+            2'b00: bran = n; // blt
+            2'b01: bran = z; // beq
+            2'b10: bran = ~n; // bge
+            default: bran = ~z; // bne
         endcase
     end
     
@@ -32,10 +32,10 @@ module ALU #(parameter width = 32) (
             4'b1000: result = a ^ b;
             4'b1001: result = a << b; // Logical
             4'b1010: result = a >> b; // Logical
-            4'b1011: result = a >>> b; // Arithmetic
+            4'b1011: result = $signed(a) >>> b; // Arithmetic
             default: result = 0;
         endcase
     end
     
-    assign ans = SetBit ? {{(width - 1){1'b0}}, bran} : result;
+    assign ans = SetBit ? {{(width - 1){1'b0}}, n} : result;
 endmodule

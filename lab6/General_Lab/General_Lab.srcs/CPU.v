@@ -72,7 +72,7 @@ module CPU(
     Control control(.inst(inst_id[6 : 0]), .jal(jal), .Branch(Branch), .jalr(jalr), 
         .ALUScr(ALUScr), .MemWrite(MemWrite), .MemRead(MemRead),
         .RegWrite(RegWrite), .ALUOp(ALUOp), .RegScr(RegScr));
-    Imm_Gen imm_gen(.inst(inst_id), .imm(imm));
+    Imm_Gen imm_gen(.inst(inst_id), .funct3(inst_id[14 : 12]), .imm(imm));
     Shift_Left shift(.in(imm), .out(shift_out));
     Adder add_imm(.a(pcd), .b(shift_out), .sum(pc_add_imm));
     Hazard_Detect hazard(.MemRead_ex(MemRead_ex), .wb_src_ex(rd),

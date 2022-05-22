@@ -1,0 +1,32 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../Test_Extended_Inst.gen/sources_1/ip/dist_mem_data/dist_mem_data_sim_netlist.v" \
+"../../../../Test_Extended_Inst.gen/sources_1/ip/dist_mem_inst/dist_mem_inst_sim_netlist.v" \
+"../../../../../General_Lab/General_Lab.srcs/ALU.v" \
+"../../../../../General_Lab/General_Lab.srcs/ALU_Control.v" \
+"../../../../../General_Lab/General_Lab.srcs/Adder.v" \
+"../../../../../General_Lab/General_Lab.srcs/CPU.v" \
+"../../../../../General_Lab/General_Lab.srcs/Control.v" \
+"../../../../../General_Lab/General_Lab.srcs/Data_Memeory.v" \
+"../../../../../General_Lab/General_Lab.srcs/EX_MEM.v" \
+"../../../../../General_Lab/General_Lab.srcs/Forwarding.v" \
+"../../../../../General_Lab/General_Lab.srcs/Hazard_Detect.v" \
+"../../../../../General_Lab/General_Lab.srcs/sources_1/new/Hexplay_Converter.v" \
+"../../../../../General_Lab/General_Lab.srcs/ID_EX.v" \
+"../../../../../General_Lab/General_Lab.srcs/IF_ID.v" \
+"../../../../../General_Lab/General_Lab.srcs/Imm_Gen.v" \
+"../../../../../General_Lab/General_Lab.srcs/Inst_Memory.v" \
+"../../../../../General_Lab/General_Lab.srcs/MEM_WB.v" \
+"../../../../../General_Lab/General_Lab.srcs/PC_Generator.v" \
+"../../../../../General_Lab/General_Lab.srcs/PDU.v" \
+"../../../../../General_Lab/General_Lab.srcs/Predict.v" \
+"../../../../../General_Lab/General_Lab.srcs/Registers.v" \
+"../../../../../General_Lab/General_Lab.srcs/Shift_Left.v" \
+"../../../../../General_Lab/General_Lab.srcs/Top.v" \
+"../../../../Test_Extended_Inst.srcs/sim_1/new/testbench.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
