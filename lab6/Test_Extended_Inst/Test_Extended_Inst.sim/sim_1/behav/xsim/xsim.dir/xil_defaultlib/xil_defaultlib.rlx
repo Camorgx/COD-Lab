@@ -2,8 +2,8 @@
 2020.2
 Oct 19 2021
 03:16:22
-C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/ALU.v,1653194794,verilog,,C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/ALU_Control.v,,ALU,,,,,,,,
-C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/ALU_Control.v,1652968951,verilog,,C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/Adder.v,,ALU_Control,,,,,,,,
+C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/ALU.v,1653283239,verilog,,C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/ALU_Control.v,,ALU,,,,,,,,
+C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/ALU_Control.v,1653283239,verilog,,C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/Adder.v,,ALU_Control,,,,,,,,
 C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/Adder.v,1652612490,verilog,,C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/CPU.v,,Adder,,,,,,,,
 C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/CPU.v,1653188648,verilog,,C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/Control.v,,CPU,,,,,,,,
 C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/Control.v,1652966928,verilog,,C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/Data_Memeory.v,,Control,,,,,,,,

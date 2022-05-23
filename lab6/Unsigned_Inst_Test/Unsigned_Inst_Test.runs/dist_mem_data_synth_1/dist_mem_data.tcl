@@ -87,7 +87,7 @@ set_property ip_output_repo c:/Users/18213/Sources/COD_Lab/lab6/Unsigned_Inst_Te
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_ip -quiet c:/Users/18213/Sources/COD_Lab/lab6/Unsigned_Inst_Test/Unsigned_Inst_Test.srcs/sources_1/ip/dist_mem_data/dist_mem_data.xci
+read_ip -quiet C:/Users/18213/Sources/COD_Lab/lab6/Unsigned_Inst_Test/Unsigned_Inst_Test.srcs/sources_1/ip/dist_mem_data/dist_mem_data.xci
 set_property used_in_implementation false [get_files -all c:/Users/18213/Sources/COD_Lab/lab6/Unsigned_Inst_Test/Unsigned_Inst_Test.gen/sources_1/ip/dist_mem_data/dist_mem_data_ooc.xdc]
 
 OPTRACE "Adding files" END { }

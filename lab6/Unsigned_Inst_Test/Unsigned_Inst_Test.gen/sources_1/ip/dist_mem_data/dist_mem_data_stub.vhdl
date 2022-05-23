@@ -3,8 +3,8 @@
 -- Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
 -- Date        : Mon May 23 12:26:04 2022
 -- Host        : Bill-Matebook running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub
---               c:/Users/18213/Sources/COD_Lab/lab6/Unsigned_Inst_Test/Unsigned_Inst_Test.gen/sources_1/ip/dist_mem_data/dist_mem_data_stub.vhdl
+-- Command     : write_vhdl -force -mode synth_stub -rename_top dist_mem_data -prefix
+--               dist_mem_data_ dist_mem_data_stub.vhdl
 -- Design      : dist_mem_data
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7a100tcsg324-1
