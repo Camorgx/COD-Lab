@@ -26,6 +26,9 @@ test_bne:
 bge x9, x10, test_bge
 li x12, 1
 test_bge:
+bge x10, x9, test_bge_1
+li x21, 1
+test_bge_1:
 
 #sll£ºÂß¼­×óÒÆ
 sll x13, x1, x3 # x13 = 2

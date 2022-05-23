@@ -25,6 +25,7 @@ module PDU(
     output [31:0] io_din,
 
     //Debug_BUS
+    input[31 : 0] total_cnt, success_cnt,
     output reg[7:0] m_rf_addr,
     input [31:0] rf_data, m_data,
 
@@ -139,7 +140,7 @@ module PDU(
         else if (step_p) cnt_al_plr <= 3'b000;
         else if (next_pn)
             if (cnt_ah_plr==2'b01)
-                if (cnt_al_plr == 3'b101) cnt_al_plr <= 3'b000;
+                if (cnt_al_plr == 3'b111) cnt_al_plr <= 3'b000;
                 else cnt_al_plr <= cnt_al_plr + 3'b001;
             else begin
                 cnt_al_plr [2] <= 1'b0;
@@ -178,6 +179,8 @@ module PDU(
                     3'b011: plr_data = imm;
                     3'b100: plr_data = {{27{1'b0}},rd};
                     3'b101: plr_data = ctrl;
+                    3'b110: plr_data = total_cnt; // For branch predict counters.
+                    3'b111: plr_data = success_cnt;
                     default: plr_data = pce;
                 endcase
             

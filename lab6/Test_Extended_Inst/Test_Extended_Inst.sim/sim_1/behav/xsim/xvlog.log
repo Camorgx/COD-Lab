@@ -53,3 +53,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/18213/Sources/COD_Lab/lab6
 INFO: [VRFC 10-311] analyzing module Top
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/18213/Sources/COD_Lab/lab6/Test_Extended_Inst/Test_Extended_Inst.srcs/sim_1/new/testbench.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module testbench
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/18213/Sources/COD_Lab/lab6/Test_Extended_Inst/Test_Extended_Inst.sim/sim_1/behav/xsim/glbl.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module glbl
+WARNING: [VRFC 10-3609] overwriting previous definition of module 'glbl' [C:/Users/18213/Sources/COD_Lab/lab6/Test_Extended_Inst/Test_Extended_Inst.sim/sim_1/behav/xsim/glbl.v:6]

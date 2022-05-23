@@ -1,0 +1,5 @@
+Time resolution is 1 ps
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+WARNING: Too many words specified in data file dist_mem_data.mif
+$finish called at time : 500 ns : File "C:/Users/18213/Sources/COD_Lab/lab6/Fib_Test/Fib_Test.srcs/sim_1/new/testbench.v" Line 11

@@ -1,0 +1,3 @@
+Time resolution is 1 ps
+WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
+$finish called at time : 1 us : File "C:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.srcs/sim_1/new/testbench.v" Line 11

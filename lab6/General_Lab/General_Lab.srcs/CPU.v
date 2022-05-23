@@ -11,6 +11,7 @@ module CPU(
     
     // Debug_BUS
     input[7 : 0] m_rf_addr,
+    output[31 : 0] total_cnt, success_cnt,
     output[31 : 0] rf_data, m_data,
     output reg[31 : 0] pc,
 
@@ -40,7 +41,7 @@ module CPU(
     wire[1 : 0] RegScr_wb, BranchSel, BranchSel_ex;
     wire[3 : 0] ALUfunc, ALUfunc_reg;
     wire[4 : 0] a_src_reg, b_src_reg;
-    wire[31 : 0] inst, pc_add_imm, pc_add_4, alu_result_mem;
+    wire[31 : 0] inst, pc_add_imm, alu_result_mem, pc_add_4;
     wire[31 : 0] inst_id, rd0, rd1, rd2, b_mem, data_rd, imm;
     wire[31 : 0] alu_result, shift_out, a_reg, b_reg, imm_reg, alu_op1, alu_op2;
     wire[31 : 0] alu_result_wb, mem_rd_reg, mem_rd, pc_add_imm_reg;
@@ -65,11 +66,11 @@ module CPU(
     wire[31 : 0] pcd_in;
     assign pcd_in = ((jal | (Branch & predict)) ? pcin : pc);
     IF_ID if_id(.clk(clk), .rst(rst), .pc(pcd_in), .flush(predict_failed),
-        .en(IF_ID_en), .pc_add_4(pc_add_4), .inst(inst),
-        .pcd(pcd), .inst_id(inst_id), .pc_add_4_d(pc_add_4_d));
+        .en(IF_ID_en), .inst(inst), .pcd(pcd), .inst_id(inst_id));
     
+    Adder add_4_d(.a(pcd), .b(4), .sum(pc_add_4_d));
     Predict pre(.clk(clk), .rst(rst), .Branch_reg(Branch_reg), 
-        .taken(alu_z), .predict(predict));
+        .taken(alu_z), .predict(predict), .total_cnt(total_cnt), .success_cnt(success_cnt));
     Control control(.inst(inst_id[6 : 0]), .jal(jal), .Branch(Branch), .jalr(jalr), 
         .ALUScr(ALUScr), .MemWrite(MemWrite), .MemRead(MemRead),
         .RegWrite(RegWrite), .ALUOp(ALUOp), .RegScr(RegScr));
