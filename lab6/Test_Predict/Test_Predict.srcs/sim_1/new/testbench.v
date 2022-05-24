@@ -8,7 +8,7 @@ module testbench();
     
     always #1 clk <= ~clk;
     
-    initial #1000 $finish;
+    initial #700 $finish;
     
     initial begin
         sw[7] <= 1;
