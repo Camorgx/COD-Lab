@@ -70,8 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -87,8 +85,8 @@ set_property ip_output_repo c:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Tes
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files c:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/data.coe
-add_files c:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/inst.coe
+add_files C:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/data.coe
+add_files C:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/inst.coe
 read_verilog -library xil_defaultlib {
   C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/ALU.v
   C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/ALU_Control.v
@@ -112,10 +110,10 @@ read_verilog -library xil_defaultlib {
   C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/Shift_Left.v
   C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/Top.v
 }
-read_ip -quiet c:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.srcs/sources_1/ip/dist_mem_data/dist_mem_data.xci
+read_ip -quiet C:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.srcs/sources_1/ip/dist_mem_data/dist_mem_data.xci
 set_property used_in_implementation false [get_files -all c:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.gen/sources_1/ip/dist_mem_data/dist_mem_data_ooc.xdc]
 
-read_ip -quiet c:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.srcs/sources_1/ip/dist_mem_inst/dist_mem_inst.xci
+read_ip -quiet C:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.srcs/sources_1/ip/dist_mem_inst/dist_mem_inst.xci
 set_property used_in_implementation false [get_files -all c:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.gen/sources_1/ip/dist_mem_inst/dist_mem_inst_ooc.xdc]
 
 OPTRACE "Adding files" END { }

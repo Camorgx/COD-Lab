@@ -83,7 +83,8 @@ module CPU(
         .BranchSel(BranchSel), .funct3(inst_id[14 : 12]), 
         .SetBit(SetBit), .Unsigned(Unsigned));
     
-    ID_EX id_ex(.clk(clk), .rst(rst), .jal(jal), .Branch(Branch), .jalr(jalr), .jalr_ex(jalr_ex),
+    ID_EX id_ex(.clk(clk), .rst(rst), .jal(jal), .Branch((turn_nop | predict_failed) ? 1'b0 :Branch), 
+        .jalr(jalr), .jalr_ex(jalr_ex),
         .ALUScr(ALUScr), .MemWrite((turn_nop | predict_failed) ? 1'b0 : MemWrite), 
         .MemRead(MemRead), .RegWrite((turn_nop | predict_failed) ? 1'b0 : RegWrite),
         .RegScr(RegScr), .a_src(inst_id[19 : 15]), .b_src(inst_id[24 : 20]), 

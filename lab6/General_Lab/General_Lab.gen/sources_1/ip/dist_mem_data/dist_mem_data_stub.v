@@ -1,10 +1,10 @@
 // Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2021.2 (win64) Build 3367213 Tue Oct 19 02:48:09 MDT 2021
-// Date        : Thu May 19 16:43:23 2022
+// Date        : Thu May 19 16:43:22 2022
 // Host        : MECHREVO-BILL running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub
-//               c:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.gen/sources_1/ip/dist_mem_data/dist_mem_data_stub.v
+// Command     : write_verilog -force -mode synth_stub -rename_top dist_mem_data -prefix
+//               dist_mem_data_ dist_mem_data_stub.v
 // Design      : dist_mem_data
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a100tcsg324-1

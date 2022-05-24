@@ -122,8 +122,7 @@ start_step init_design
 set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
-  set_param chipscope.maxJobs 4
-  set_param xicom.use_bs_reader 1
+  set_param chipscope.maxJobs 2
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7a100tcsg324-1
   set_property design_mode GateLvl [current_fileset]
@@ -137,8 +136,8 @@ OPTRACE "set parameters" START { }
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.runs/synth_1/Top.dcp
-  read_ip -quiet c:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.srcs/sources_1/ip/dist_mem_data/dist_mem_data.xci
-  read_ip -quiet c:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.srcs/sources_1/ip/dist_mem_inst/dist_mem_inst.xci
+  read_ip -quiet C:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.srcs/sources_1/ip/dist_mem_data/dist_mem_data.xci
+  read_ip -quiet C:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.srcs/sources_1/ip/dist_mem_inst/dist_mem_inst.xci
 OPTRACE "read constraints: implementation" START { }
   read_xdc C:/Users/18213/Sources/COD_Lab/lab6/General_Lab/General_Lab.srcs/constrs_1/new/board.xdc
 OPTRACE "read constraints: implementation" END { }
