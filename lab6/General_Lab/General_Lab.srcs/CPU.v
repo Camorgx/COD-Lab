@@ -59,13 +59,9 @@ module CPU(
         else if (PC_en) pc <= pcin;
     end
     Adder add_4(.a(pc), .b(4), .sum(pc_add_4));
-    wire[7 : 0] inst_ra;
-    assign inst_ra = ((jal | (Branch & predict)) ? pcin[9 : 2] : pc[9 : 2]);
-    Inst_Memory inst_mem(.clk(clk), .ra(inst_ra), .rd(inst));
+    Inst_Memory inst_mem(.clk(clk), .ra(pc[9 : 2]), .rd(inst));
     
-    wire[31 : 0] pcd_in;
-    assign pcd_in = ((jal | (Branch & predict)) ? pcin : pc);
-    IF_ID if_id(.clk(clk), .rst(rst), .pc(pcd_in), .flush(predict_failed),
+    IF_ID if_id(.clk(clk), .rst(rst), .pc(pc), .flush(predict_failed | (jal | (Branch & predict))),
         .en(IF_ID_en), .inst(inst), .pcd(pcd), .inst_id(inst_id));
     
     Adder add_4_d(.a(pcd), .b(4), .sum(pc_add_4_d));
