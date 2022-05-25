@@ -10,6 +10,5 @@
     ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 
 source dist_mem_data.tcl -notrace
-create_project: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1252.039 ; gain = 28.637
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP dist_mem_data, cache-ID = 642b5abd3626f97e.
-INFO: [Common 17-206] Exiting Vivado at Tue May 24 16:27:05 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed May 25 20:20:16 2022...

@@ -2,15 +2,14 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Tue May 24 16:16:01 2022
-# Process ID: 12136
+# Start of session at: Wed May 25 20:20:20 2022
+# Process ID: 3468
 # Current directory: C:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.runs/dist_mem_inst_synth_1
 # Command line: vivado.exe -log dist_mem_inst.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source dist_mem_inst.tcl
 # Log file: C:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.runs/dist_mem_inst_synth_1/dist_mem_inst.vds
 # Journal file: C:/Users/18213/Sources/COD_Lab/lab6/Test_Predict/Test_Predict.runs/dist_mem_inst_synth_1\vivado.jou
-# Running On: Bill-Matebook, OS: Windows, CPU Frequency: 2419 MHz, CPU Physical cores: 4, Host memory: 16967 MB
+# Running On: MECHREVO-BILL, OS: Windows, CPU Frequency: 2304 MHz, CPU Physical cores: 8, Host memory: 68621 MB
 #-----------------------------------------------------------
 source dist_mem_inst.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:08 . Memory (MB): peak = 1247.266 ; gain = 23.836
 INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP dist_mem_inst, cache-ID = c83af3bacb6169cc.
-INFO: [Common 17-206] Exiting Vivado at Tue May 24 16:16:16 2022...
+INFO: [Common 17-206] Exiting Vivado at Wed May 25 20:20:30 2022...

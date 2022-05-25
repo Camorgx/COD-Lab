@@ -17,6 +17,7 @@
   <File Type="BITSTR-MMI" Name="Top.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="Top_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-SYSDEF" Name="Top.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Top_methodology_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="Top.ltx"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
@@ -48,7 +49,6 @@
   <File Type="PHYSOPT-DCP" Name="Top_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="Top_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="Top_postroute_physopt_bb.dcp"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="Top_methodology_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="Top_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="Top_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="Top.pdi"/>
@@ -272,7 +272,6 @@
     <Step Id="route_design"/>
     <Step Id="post_route_phys_opt_design"/>
     <Step Id="write_bitstream"/>
-    <Step Id="write_device_image"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="dist_mem_data"/>
   <BlockFileSet Type="BlockSrcs" Name="dist_mem_inst"/>

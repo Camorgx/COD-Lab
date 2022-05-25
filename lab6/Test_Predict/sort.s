@@ -1,5 +1,5 @@
 .data
-array: .word 5, 3, 4, 2, 1
+array: .word 2, 3, 4, 2, 1
 array_size: .word 5
 
 .text

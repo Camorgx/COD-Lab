@@ -1,7 +1,7 @@
 # compile verilog/system verilog design source files
 verilog xil_defaultlib  \
 "../../../../Test_Extended_Inst.gen/sources_1/ip/dist_mem_data/dist_mem_data_sim_netlist.v" \
-"../../../../Test_Extended_Inst.gen/sources_1/ip/dist_mem_inst/dist_mem_inst_sim_netlist.v" \
+"../../../../Test_Extended_Inst.gen/sources_1/ip/dist_mem_inst/sim/dist_mem_inst.v" \
 "../../../../../General_Lab/General_Lab.srcs/ALU.v" \
 "../../../../../General_Lab/General_Lab.srcs/ALU_Control.v" \
 "../../../../../General_Lab/General_Lab.srcs/Adder.v" \

@@ -32,5 +32,5 @@ module Predict(
         if (rst) state <= S0;
         else state <= next_state;
     
-    assign predict = ((state == S2) | (state == S3));
+    assign predict = state[1];
 endmodule
