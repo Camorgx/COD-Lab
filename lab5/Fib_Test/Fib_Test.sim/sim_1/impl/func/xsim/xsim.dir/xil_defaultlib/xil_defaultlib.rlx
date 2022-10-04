@@ -1,6 +1,0 @@
-0.7
-2020.2
-Oct 19 2021
-02:56:52
-/home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.sim/sim_1/impl/func/xsim/testbench_func_impl.v,1651150012,verilog,,/home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.srcs/sim_1/new/testbench.v,,ALU;Adder;Adder_0;CPU;Data_Memory;EX_MEM;ID_EX;IF_ID;Inst_Memory;MEM_WB;PDU;Predict;Registers;Top;dist_mem_data;dist_mem_data_dist_mem_gen_v8_0_13;dist_mem_data_dist_mem_gen_v8_0_13_synth;dist_mem_data_dpram;dist_mem_inst;dist_mem_inst_dist_mem_gen_v8_0_13;dist_mem_inst_dist_mem_gen_v8_0_13_synth;dist_mem_inst_spram;glbl,,,,,,,,
-/home/bill/Source/Vivado_Projects/Principle_Of_Computer_Composition/lab5/Fib_Test/Fib_Test.srcs/sim_1/new/testbench.v,1651047231,verilog,,,,testbench,,,,,,,,

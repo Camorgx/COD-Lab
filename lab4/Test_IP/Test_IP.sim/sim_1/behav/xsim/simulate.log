@@ -1,3 +1,0 @@
-Time resolution is 1 ps
-WARNING: This core is supplied with a behavioral model. To model cycle-accurate behavior you must run timing simulation.
-$finish called at time : 20 ns : File "C:/Users/18213/Sources/Vivado_Projects/Principle_Of_Computer_Composition/lab4/Test_IP/Test_IP.srcs/sim_1/new/tb.v" Line 21
